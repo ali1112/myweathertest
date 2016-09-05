@@ -2,6 +2,7 @@ package com.test.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class Clouds {
 
 	@JsonProperty("all")

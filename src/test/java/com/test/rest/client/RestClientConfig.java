@@ -1,5 +1,8 @@
-package com.test.entity;
+package com.test.rest.client;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RestClientConfig {
 
 	String url = "http://api.openweathermap.org/data";
