@@ -6,5 +6,45 @@
      http://www.springframework.org/schema/context
      http://www.springframework.org/schema/context/spring-context-3.0.xsd"> 
     <context:annotation-config /> 
-    <context:component-scan base-package="com.test.rest.*"/>
+    <context:component-scan base-package="com.test.*"/>
+    
+   <!--  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:config/mybatisV3-config.xml"/>
+	</bean>
+	
+	<bean id="mainDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="${db.driver}" />
+        <property name="jdbcUrl" value="${db.url}" />
+        <property name="user" value="${db.user}"/>
+        <property name="password" value="$enc{db.pass}"/>
+        <property name="initialPoolSize" value="${initial.poolSize}"/>
+        <property name="minPoolSize" value="${min.pool.size}"/>
+        <property name="maxPoolSize" value="${max.pool.size}"/>
+        <property name="numHelperThreads" value="${num.helper.threads}"/>
+        <property name="acquireIncrement" value="${acquire.increment}"/>
+        <property name="idleConnectionTestPeriod" value="${idle.connection.test.period}"/>
+        <property name="testConnectionOnCheckin" value="${test.connection.on.checkin}"/>
+        <property name="maxStatementsPerConnection" value="${max.statements.per.connection}"/>
+        <property name="preferredTestQuery" value="select 1"/>
+    </bean>
+    
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" id="mybatisScanner">
+        <property name="basePackage" value="com.expedia.cat.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+    
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource" />
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+ 	   <property name="dataSource" ref="dataSource" />
+  	  <property name="configLocation" value="WEB-INF/mybatis/sqlmap-config.xml" />
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+ 	   <property name="basePackage" value="${MapperInterfacePackage}" />
+	</bean>-->
+	
 </beans>

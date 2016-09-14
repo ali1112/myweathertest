@@ -23,6 +23,31 @@ public class Sys {
 	public String toString() {
 		return "Sys [country=" + country + ", sunrise=" + sunrise + ", sunset=" + sunset + "]";
 	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public DateTime getSunrise() {
+		return sunrise;
+	}
+
+	public void setSunrise(DateTime sunrise) {
+		this.sunrise = sunrise;
+	}
+
+	public DateTime getSunset() {
+		return sunset;
+	}
+
+	public void setSunset(DateTime sunset) {
+		this.sunset = sunset;
+	}
+	
 	
 	
 	

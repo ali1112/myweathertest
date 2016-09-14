@@ -1,8 +1,6 @@
 package com.test.entity;
 
-import java.sql.Timestamp;
 import java.util.Arrays;
-import java.util.Date;
 
 import org.joda.time.DateTime;
 
@@ -17,7 +15,7 @@ public class WeatherResponse {
 	String name;
 
 	@JsonProperty("id")
-	String id;
+	Long id;
 	
 	@JsonProperty("visibility")
 	Integer visibility;
@@ -33,7 +31,7 @@ public class WeatherResponse {
 	Rain rain;
 	
 	@JsonProperty("snow")
-	Snow snow3h;
+	Snow snow;
 	
 	@JsonProperty("clouds")
 	Clouds clouds;
@@ -50,7 +48,7 @@ public class WeatherResponse {
 	@Override
 	public String toString() {
 		return "WeatherResponse [name=" + name + ", id=" + id + ", visibility=" + visibility + ", coord=" + coord
-				+ ", date=" + date + ", rain=" + rain + ", snow3h=" + snow3h + ", clouds=" + clouds + ", wind=" + wind
+				+ ", date=" + date + ", rain=" + rain + ", snow3h=" + snow + ", clouds=" + clouds + ", wind=" + wind
 				+ ", sys=" + sys + ", mainWeather=" + mainWeather + ", weather=" + Arrays.toString(weather) + "]";
 	}
 
@@ -73,11 +71,11 @@ public class WeatherResponse {
 		this.name = name;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -129,12 +127,12 @@ public class WeatherResponse {
 		this.rain = rain;
 	}
 
-	public Snow getSnow3h() {
-		return snow3h;
+	public Snow getSnow() {
+		return snow;
 	}
 
-	public void setSnow3h(Snow snow3h) {
-		this.snow3h = snow3h;
+	public void setSnow(Snow snow3h) {
+		this.snow = snow3h;
 	}
 
 	public Clouds getClouds() {

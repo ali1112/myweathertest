@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.interfaces.IWeatherResponseDao" >
+
+	<insert id="insertWeatherResponse" parameterType="com.test.dao.entity.WeatherResponseDao" useGeneratedKeys="true"
+    keyProperty="id">
+		<!--  <selectKey resultType="int" keyProperty="id"
+			order="AFTER">
+			SELECT LAST_INSERT_ID() as id;
+		</selectKey>-->
+	   INSERT into mytest.weatherresponse( localtionId, locationName, country, coordLon, coordLat, rain3h, snow3h, 
+	   		clouds3h, windSpeed, windDeg, visibility, date, sunrise, sunset, weatherReuestDate, temp, tempUnit, pressure, humidity, 
+	   		tempMin, tempMax)
+	    VALUES(
+	    #{localtionId},
+	    #{locationName},
+	    #{country},
+	    #{coordLon},
+	    #{coordLat},
+	    #{rain3h},
+	    #{snow3h},
+	    #{clouds3h},
+	    #{windSpeed},
+	    #{windDeg},
+	    #{visibility},
+	    #{date},
+	    #{sunrise},
+	    #{sunset},
+	    #{weatherReuestDate},
+	    #{temp},
+	    #{tempUnit},
+	    #{pressure},
+	    #{humidity},
+	    #{tempMin},
+	    #{tempMax}) 
+	  <!--   <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            SELECT LAST_INSERT_ID();
+        </selectKey>-->
+	</insert>
+	<!--  <insert id="insertVillage" parameterType="village"  keyProperty="id" useGeneratedKeys="true">
+		INSERT into village(name,district) VALUES(#{name}, #{district}) 	    
+	</insert>
+	<update id="updateVillage" parameterType="village">
+		UPDATE village SET name=#{name}, district =#{district} WHERE id =#{id}  	    
+	</update>
+	<delete id="deleteVillage" parameterType="int">
+		DELETE FROM village WHERE id =#{id}  	    
+	</delete>-->
+	
+	<select id="getWeatherResponse" parameterType="Integer" resultType="com.test.dao.entity.WeatherResponseDao">
+		select * from mytest.weatherresponse where id=#{id}
+	</select>
+</mapper> 

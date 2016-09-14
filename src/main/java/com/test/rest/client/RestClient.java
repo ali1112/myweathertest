@@ -71,6 +71,9 @@ public class RestClient {
 				
 			} 
             catch(ProcessingException ex){
+            	if(restResponse == null){
+            		restResponse = new RestResponse();
+            	}
             	restResponse.setResponse(response);
             	restResponse.setResponseCode(ResponseCode.PROCESSING_ERROR);
             }

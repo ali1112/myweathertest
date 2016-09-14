@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.interfaces.IWeatherMainDao" >
+
+	<insert id="insertWeatherMain" parameterType="com.test.dao.entity.WeatherMainDaoObj" useGeneratedKeys="true"
+    keyProperty="id">
+
+	   INSERT into mytest.weathermain(weatherResponseId, temp, tempUnit, pressure, humidity, 
+	   	tempMin, tempMax)
+	    VALUES(
+	    #{weatherResponseId},
+	    #{temp},
+	    #{tempUnit},
+	    #{pressure},
+	    #{humidity},
+	    #{tempMin},
+	    #{tempMax}
+	   ) 
+	</insert>   
+	<select id="getWeatherMains" parameterType="Integer" resultMap="WeatherMain">
+		select * from mytest.weatherresponse where weatherResponseId=#{weatherResponseId}
+	</select>
+	
+	<resultMap id="weatherMain" type="WeatherMain">
+  		 <id property="id" column="author_id"/>
+ 		 <result property="weatherResponseId" column="weatherResponseId"/>
+ 		 <result property="temp" column="temp"/>
+ 		 <result property="tempUnit" column="tempUnit"/>
+ 		 <result property="pressure" column="pressure"/>
+ 		 <result property="pressure" column="pressure"/>
+ 		 <result property="humidity" column="humidity"/>
+ 		 <result property="tempMin" column="tempMin"/>
+ 		 <result property="tempMax" column="tempMax"/>	 
+	</resultMap>
+</mapper>
